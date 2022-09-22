@@ -1,0 +1,11 @@
+Host bastion
+  Hostname 51.250.83.187
+  User appuser
+  IdentityFile /home/azathoth/.ssh/id_rsa
+
+Host someinternalhost
+  Hostname 10.128.0.9
+  User appuser
+  ProxyCommand ssh -W %h:%p bastion
+  IdentityFile /home/azathoth/.ssh/id_rsa
+
