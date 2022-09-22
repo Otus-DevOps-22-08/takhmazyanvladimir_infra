@@ -1,21 +1,7 @@
 # takhmazyanvladimir_infra
 takhmazyanvladimir Infra repository
 
-Для прямого подключения с локальной тачки к someinternalhost прописываем в /home/azathoth/.ssh/config следующее:
-
-#начало конфига
-Host bastion
-  Hostname 51.250.83.187
-  User appuser
-  IdentityFile /home/azathoth/.ssh/id_rsa
-
-Host someinternalhost
-  Hostname 10.128.0.9
-  User appuser
-  ProxyCommand ssh -W %h:%p bastion
-  IdentityFile /home/azathoth/.ssh/id_rsa
-#конец конфига
-
+Для прямого подключения с локальной тачки к someinternalhost прописываем в /home/azathoth/.ssh/config определённые настройки (выложил файл config в папку cloud-bastion).
 И далее подключаемся командой ssh someinternalhost
 
 pritunl настроен, vpn работает
