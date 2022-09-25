@@ -1,4 +1,6 @@
 #!/bin/bash
+echo "UBUNTU VERSION"
+lsb_release -d
 sudo apt-get update
 sudo apt-get install apt-transport-https ca-certificates
 #sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
