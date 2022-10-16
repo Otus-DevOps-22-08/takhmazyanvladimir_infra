@@ -6,7 +6,7 @@ sudo apt-get install -y git
 git clone -b monolith https://github.com/express42/reddit.git $APP_DIR/reddit
 cd $APP_DIR/reddit
 sleep 20
-sudo apt-get install -y bundler
+#sudo apt-get install -y bundler
 bundle install
 sleep 20
 sudo mv /tmp/puma.service /etc/systemd/system/puma.service
