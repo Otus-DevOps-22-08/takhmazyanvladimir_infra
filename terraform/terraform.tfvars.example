@@ -1,0 +1,8 @@
+cloud_id = "sbtsmmtrbltrlmn"
+folder_id = "stopnbtsoipst"
+zone = "ru-central1-a"
+image_id = "argagsaeeii"
+public_key_path = "~/.ssh/id_rsa.pub"
+private_key_path = "~/.ssh/id_rsa"
+subnet_id = "ragoirepogriopepr"
+service_account_key_file = "key.json"
