@@ -1,6 +1,8 @@
 {
 	"service_account_key_file": "key.json",
-	"folder_id": "someid",
-	"image_name": "reddit-base-{{timestamp}}",
-	"image_family": "reddit-base"
+	"folder_id": "b1g61dtt072cmmff90m4",
+	"image_name_db": "reddit-db-{{timestamp}}",
+	"image_family_db": "reddit-db",
+	"image_name_app": "reddit-app-{{timestamp}}",
+        "image_family_app": "reddit-app",
 }

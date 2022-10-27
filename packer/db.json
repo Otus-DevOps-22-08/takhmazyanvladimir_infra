@@ -3,11 +3,10 @@
         {
             "type": "yandex",
 	    "token": "y0_AgAAAAABUx0aAATuwQAAAADPxl3qRo9dQtqlSxun-q2_d5MzfROK4Lk",
-            #"service_account_key_file": "{{user `service_account_key_file`}}",
             "folder_id": "{{user `folder_id`}}",
             "source_image_family": "ubuntu-1604-lts",
-            "image_name": "{{user `image_name_app`}}",
-            "image_family": "{{user `image_family_app`}}",
+            "image_name": "{{user `image_name_db`}}",
+            "image_family": "{{user `image_family_db`}}",
             "ssh_username": "ubuntu",
             "platform_id": "standard-v1",
             "use_ipv4_nat": "true"
@@ -17,7 +16,7 @@
     "provisioners": [
         {
             "type": "shell",
-            "script": "scripts/install_ruby.sh",
+            "script": "scripts/install_mongodb.sh",
             "execute_command": "sudo {{.Path}}"
         }    ]
 }
