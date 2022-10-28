@@ -4,5 +4,5 @@
 	"image_name_db": "reddit-db-{{timestamp}}",
 	"image_family_db": "reddit-db",
 	"image_name_app": "reddit-app-{{timestamp}}",
-        "image_family_app": "reddit-app",
+        "image_family_app": "reddit-app"
 }
