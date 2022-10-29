@@ -1,0 +1,240 @@
+{
+  "version": 4,
+  "terraform_version": "0.12.8",
+  "serial": 9,
+  "lineage": "11a5f976-59de-ab01-3025-edaad6dd88a7",
+  "outputs": {
+    "external_ip_address_app": {
+      "value": "51.250.6.212",
+      "type": "string"
+    },
+    "external_ip_address_db": {
+      "value": "51.250.84.52",
+      "type": "string"
+    }
+  },
+  "resources": [
+    {
+      "mode": "data",
+      "type": "terraform_remote_state",
+      "name": "vpc",
+      "provider": "provider.terraform",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "backend": "s3",
+            "config": {
+              "value": {
+                "access_key": "YCAJEhJKFIVuAHtPJGkCo5PFx",
+                "bucket": "azathoth-terraform",
+                "endpoint": "storage.yandexcloud.net",
+                "key": "terraform_stage.tfstate",
+                "region": "ru-central1",
+                "secret_key": "YCPwYmxzVn1geg9_xv2Jvcoi65rCY0k9FVfnzfgz",
+                "skip_credentials_validation": true,
+                "skip_region_validation": true
+              },
+              "type": [
+                "object",
+                {
+                  "access_key": "string",
+                  "bucket": "string",
+                  "endpoint": "string",
+                  "key": "string",
+                  "region": "string",
+                  "secret_key": "string",
+                  "skip_credentials_validation": "bool",
+                  "skip_region_validation": "bool"
+                }
+              ]
+            },
+            "defaults": null,
+            "outputs": {
+              "value": {},
+              "type": [
+                "object",
+                {}
+              ]
+            },
+            "workspace": "default"
+          }
+        }
+      ]
+    },
+    {
+      "module": "module.app",
+      "mode": "managed",
+      "type": "yandex_compute_instance",
+      "name": "app",
+      "provider": "provider.yandex",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "allow_stopping_for_update": null,
+            "boot_disk": [
+              {
+                "auto_delete": true,
+                "device_name": "fhmekj0sp3bsh54aps92",
+                "disk_id": "fhmekj0sp3bsh54aps92",
+                "initialize_params": [
+                  {
+                    "description": "",
+                    "image_id": "fd8nr02mpieo2um8m867",
+                    "name": "",
+                    "size": 10,
+                    "snapshot_id": "",
+                    "type": "network-hdd"
+                  }
+                ],
+                "mode": "READ_WRITE"
+              }
+            ],
+            "created_at": "2022-10-29T00:02:32Z",
+            "description": "",
+            "folder_id": "b1g61dtt072cmmff90m4",
+            "fqdn": "fhm2ehm73d9b0fj5m59h.auto.internal",
+            "hostname": "fhm2ehm73d9b0fj5m59h",
+            "id": "fhm2ehm73d9b0fj5m59h",
+            "labels": {
+              "tags": "reddit-app"
+            },
+            "metadata": {
+              "ssh-keys": "azathoth:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDHglT/JNX0P4hUv82eb47UrjhF35M2NzYOK+1LZ3vVRy/PEsk+uyBQwKEg6yJbEAxympKKdYfa8Xkm8VDO8HKdlCMOypjVMsUPOcmhKHJQWwqKYdf63TnHpeW0gwQmJlAkrXVvCQSj2Ttt6Ki1ai1Cu9AETe6jSVNZPq/B/jwr2Nnka0dNuY0+c9bbcKTJBcBmLFTAD1OFrEtmKL/57xfFDzKK0QBpNP+JsyqgXMRc7YK7ajOG5ITqcuvoByWJVHNouuQG+t76QcUjTj185q8URYBDawWLv4fEXRNd7Mrx1K0Pq/NY+6383b1VYuxtSOYGzIO3OWKY8PqrFoM012V7Oxg2hbMTeAhIypJQLNgVk38S5wjdwpb/UxI1KqnT1KHWSt6cR82IcegyuDCKgP0M+CTLz4Te0rZIdHfR9evEdpBVkFIRU8VdtuGPXWYXvSTBSKoNLlN0CVnTpTm9JMVyoUqENPvJZxWNbgKcmSkMrPFGKVHtdtdLCxF5QxXV6iM= azathoth@DESKTOP-E8V0D9A\n"
+            },
+            "name": "reddit-app",
+            "network_acceleration_type": "standard",
+            "network_interface": [
+              {
+                "index": 0,
+                "ip_address": "10.128.0.21",
+                "ipv4": true,
+                "ipv6": false,
+                "ipv6_address": "",
+                "mac_address": "d0:0d:27:46:c7:1b",
+                "nat": true,
+                "nat_ip_address": "51.250.6.212",
+                "nat_ip_version": "IPV4",
+                "security_group_ids": [],
+                "subnet_id": "e9bieggrnqiija9vls4o"
+              }
+            ],
+            "placement_policy": [
+              {
+                "placement_group_id": ""
+              }
+            ],
+            "platform_id": "standard-v1",
+            "resources": [
+              {
+                "core_fraction": 100,
+                "cores": 2,
+                "gpus": 0,
+                "memory": 2
+              }
+            ],
+            "scheduling_policy": [
+              {
+                "preemptible": false
+              }
+            ],
+            "secondary_disk": [],
+            "service_account_id": "",
+            "status": "running",
+            "timeouts": null,
+            "zone": "ru-central1-a"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjMwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.db",
+      "mode": "managed",
+      "type": "yandex_compute_instance",
+      "name": "db",
+      "provider": "provider.yandex",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "allow_stopping_for_update": null,
+            "boot_disk": [
+              {
+                "auto_delete": true,
+                "device_name": "fhmd9b3dvvqg2b9coj16",
+                "disk_id": "fhmd9b3dvvqg2b9coj16",
+                "initialize_params": [
+                  {
+                    "description": "",
+                    "image_id": "fd8llnd7p0lkcrruu1k4",
+                    "name": "",
+                    "size": 10,
+                    "snapshot_id": "",
+                    "type": "network-hdd"
+                  }
+                ],
+                "mode": "READ_WRITE"
+              }
+            ],
+            "created_at": "2022-10-29T00:02:32Z",
+            "description": "",
+            "folder_id": "b1g61dtt072cmmff90m4",
+            "fqdn": "fhmij8a3136mohjiv7ka.auto.internal",
+            "hostname": "fhmij8a3136mohjiv7ka",
+            "id": "fhmij8a3136mohjiv7ka",
+            "labels": {
+              "tags": "reddit-db"
+            },
+            "metadata": {
+              "ssh-keys": "azathoth:ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDHglT/JNX0P4hUv82eb47UrjhF35M2NzYOK+1LZ3vVRy/PEsk+uyBQwKEg6yJbEAxympKKdYfa8Xkm8VDO8HKdlCMOypjVMsUPOcmhKHJQWwqKYdf63TnHpeW0gwQmJlAkrXVvCQSj2Ttt6Ki1ai1Cu9AETe6jSVNZPq/B/jwr2Nnka0dNuY0+c9bbcKTJBcBmLFTAD1OFrEtmKL/57xfFDzKK0QBpNP+JsyqgXMRc7YK7ajOG5ITqcuvoByWJVHNouuQG+t76QcUjTj185q8URYBDawWLv4fEXRNd7Mrx1K0Pq/NY+6383b1VYuxtSOYGzIO3OWKY8PqrFoM012V7Oxg2hbMTeAhIypJQLNgVk38S5wjdwpb/UxI1KqnT1KHWSt6cR82IcegyuDCKgP0M+CTLz4Te0rZIdHfR9evEdpBVkFIRU8VdtuGPXWYXvSTBSKoNLlN0CVnTpTm9JMVyoUqENPvJZxWNbgKcmSkMrPFGKVHtdtdLCxF5QxXV6iM= azathoth@DESKTOP-E8V0D9A\n"
+            },
+            "name": "reddit-db",
+            "network_acceleration_type": "standard",
+            "network_interface": [
+              {
+                "index": 0,
+                "ip_address": "10.128.0.6",
+                "ipv4": true,
+                "ipv6": false,
+                "ipv6_address": "",
+                "mac_address": "d0:0d:12:9a:14:30",
+                "nat": true,
+                "nat_ip_address": "51.250.84.52",
+                "nat_ip_version": "IPV4",
+                "security_group_ids": [],
+                "subnet_id": "e9bieggrnqiija9vls4o"
+              }
+            ],
+            "placement_policy": [
+              {
+                "placement_group_id": ""
+              }
+            ],
+            "platform_id": "standard-v1",
+            "resources": [
+              {
+                "core_fraction": 100,
+                "cores": 2,
+                "gpus": 0,
+                "memory": 2
+              }
+            ],
+            "scheduling_policy": [
+              {
+                "preemptible": false
+              }
+            ],
+            "secondary_disk": [],
+            "service_account_id": "",
+            "status": "running",
+            "timeouts": null,
+            "zone": "ru-central1-a"
+          },
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjMwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9"
+        }
+      ]
+    }
+  ]
+}
