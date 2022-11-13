@@ -32,12 +32,8 @@ resource "yandex_compute_instance" "app" {
     private_key = file(var.private_key_path)
   }
 
-  provisioner "remote-exec" {
-    inline = ["export DATABASE_URL=${var.db_ip}", "echo $DATABASE_URL"]
-  }
-
   provisioner "file" {
-    source      = "../modules/app/files/puma.service"
+    content     = templatefile("../modules/app/files/puma.service.tftpl", { db_ip = var.db_ip })
     destination = "/tmp/puma.service"
   }
 
