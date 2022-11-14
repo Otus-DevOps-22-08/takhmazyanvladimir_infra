@@ -1,0 +1,11 @@
+app_count = 1
+cloud_id                 = "b1g3eujb842er38fng1i"
+folder_id                = "b1g61dtt072cmmff90m4"
+zone                     = "ru-central1-a"
+image_id                 = "fd8esum6j2mikembs3ku"
+public_key_path          = "~/.ssh/id_rsa.pub"
+private_key_path         = "~/.ssh/id_rsa"
+subnet_id                = "e9bieggrnqiija9vls4o"
+service_account_key_file = "key.json"
+db_disk_image		 = "fd8llnd7p0lkcrruu1k4"
+app_disk_image           = "fd8nr02mpieo2um8m867"
