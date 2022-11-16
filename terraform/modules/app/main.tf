@@ -24,7 +24,7 @@ resource "yandex_compute_instance" "app" {
     ssh-keys = "azathoth:${file(var.public_key_path)}"
   }
 
-  connection {
+/*  connection {
     type        = "ssh"
     host        = self.network_interface.0.nat_ip_address
     user        = "ubuntu"
@@ -39,5 +39,5 @@ resource "yandex_compute_instance" "app" {
 
   provisioner "remote-exec" {
     script = "../modules/app/files/deploy.sh"
-  }
+  }*/
 }

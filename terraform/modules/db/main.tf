@@ -24,7 +24,7 @@ resource "yandex_compute_instance" "db" {
   ssh-keys = "azathoth:${file(var.public_key_path)}"
   }
 
-  connection {
+/*  connection {
     type        = "ssh"
     host        = self.network_interface.0.nat_ip_address
     user        = "ubuntu"
@@ -43,6 +43,6 @@ resource "yandex_compute_instance" "db" {
 
   provisioner "remote-exec" {
     inline = ["sudo mv /tmp/mongod.conf /etc/mongod.conf","sudo systemctl restart mongod"]
-  }
+  }*/
 
 }
