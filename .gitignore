@@ -5,3 +5,6 @@ key.json
 *.tfstate.backup
 *.tfvars
 .terraform/
+backend.conf
+*.retry
+jdauphant.nginx
